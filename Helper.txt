@@ -1,0 +1,9 @@
+$templateFile = "././jag_showcase/infra-as-code/bicep/modules/main.bicep"
+$parameterFileSQL = "././jag_showcase/infra-as-code/bicep/modules/parameters/sql.parameters.dev.json"
+$parameterFileStorage = "././jag_showcase/infra-as-code/bicep/modules/parameters/storageAccount.parameters.dev.json"
+$parameterFilePIP = "././jag_showcase/infra-as-code/bicep/modules/parameters/pip.parameters.dev.json"
+$parameterFileVnet = "././jag_showcase/infra-as-code/bicep/modules/parameters/vnet.parameters.dev.json"
+$parameterFileNsg = "././jag_showcase/infra-as-code/bicep/modules/parameters/nsg.parameters.dev.json"
+$parameterFileAppGw = "././jag_showcase/infra-as-code/bicep/modules/parameters/appgw.parameters.dev.json"
+
+az deployment group create --resource-group rg-bicep-demo-uks-01 --template-file $templateFile --parameters @$parameterFileSQL @$parameterFileStorage @$parameterFilePIP @$parameterFileVnet @$parameterFileNsg @$parameterFileAppGw
