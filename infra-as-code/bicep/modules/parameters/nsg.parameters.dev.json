@@ -1,0 +1,69 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "parLocation":{
+           "value": "uksouth" 
+        },
+        "parTags": {
+            "value": {
+                "Environment": "JagsLab",
+                "Owner": "Jag"
+             }
+        },
+        "parNsgSnetAppGwName":{
+            "value": "nsg-snet-appgw"
+        },
+        "parNsgSnetwebName":{
+            "value": "nsg-snet-web"
+        },
+        "parNsgSecurityRules": {
+            "value": [
+                {
+                    "name": "Allow-80",
+                    "properties": {
+                        "description": "Required for http to https redirect",
+                        "priority": 100,
+                        "sourceAddressPrefix": "*",
+                        "protocol": "TCP",
+                        "destinationPortRange": "80",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "10.20.16.0/26"                    
+                        }
+                },
+                {
+                        "name": "Allow-443",
+                        "properties": {
+                          "description":"Requirement https://docs.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure#network-security-group",
+                          "priority": 120,
+                          "sourceAddressPrefix": "*",
+                          "protocol": "Tcp",
+                          "destinationPortRange": 443,
+                          "access": "Allow",
+                          "direction": "Inbound",
+                          "sourcePortRange": "*",
+                          "destinationAddressPrefix": "10.20.16.0/26"
+                        }
+                },
+                {
+                        "name": "In-ApplicaitonGatewayRequirement",
+                        "properties": {
+                        "description":"Requirement https://docs.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure#network-security-group",
+                        "priority": 110,
+                        "sourceAddressPrefix": "GatewayManager",
+                        "protocol": "Tcp",
+                        "destinationPortRange": "65200-65535",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*"
+                         }
+
+                }
+
+            ]
+        }
+    }
+}

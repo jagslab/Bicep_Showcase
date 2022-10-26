@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "parLocation":{
+           "value": "uksouth" 
+        },
+        
+        "parPipName":{
+            "value": "pip-jagslab-demo-uks-01"
+        },        
+         "parTags": {
+             "value": {
+                 "Environment": "JagsLab",
+                 "Owner": "Jag"
+              }
+         },
+         "parSkuName":{
+            "value": "Standard"
+         },
+         "parSkuTier":{
+            "value": "Regional"
+         },
+         "parPublicIPAllocationMethod":{
+            "value": "Static"
+         }
+
+    }
+}

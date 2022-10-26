@@ -1,0 +1,100 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "parLocation":{
+           "value": "uksouth" 
+        },
+        
+        "parAppGwName":{
+            "value": "agw-jagslab-demo-uks-01"
+        },
+        "parTags": {
+            "value": {
+                "Environment": "JagsLab",
+                "Owner": "Jag"
+             }
+        },
+        "parUserIDName": {
+            "value": "id-shared"
+        },
+        "parSharedRgName":{
+            "value": "rg-shared-neu-01"
+        },
+        "parAppGwIdentity":{
+            "value": "UserAssigned"
+        },
+        "parMinCapacity":{
+            "value": 1
+        },
+        "parMaxCapacity":{
+            "value": 2
+        },
+        "parfrontendIPConfigurationName":{
+            "value": "appgwfrontendip"
+        },
+        "parGatewayIPConfigurationsName":{
+            "value": "appgwipconfig"
+        },
+        "parAppGwSkuName":{
+            "value": "WAF_v2"
+        },
+        "parAppGwSkuTier":{
+            "value": "WAF_v2"
+        },
+        "parAppGwFirewallMode":{
+            "value": "Prevention"
+        },
+        "parAppGwRuleTypeSet":{
+            "value": "OWASP"
+        },
+        "parAppGwRuleSetEnabled":{
+            "value": true
+        },
+        "parAppGwRuleSetVersion":{
+            "value": "3.2"
+        },
+        "parFrontEndPortName":{
+            "value": "appgwfrontendport"
+        },
+        "parFrontEndPortNumber":{
+            "value": 443
+        },
+        "parHttpListenerName":{
+            "value": "appgwhttplisteners"
+        },
+        "parHttpListenerProtocol":{
+            "value": "Https"
+        },
+        "parRequireServerNameIndication":{
+            "value": false
+        },
+        "parBackendAddressPoolName":{
+            "value": "appgwbackendpools"
+        },
+        "parBackendAdressFqdn":{
+            "value": "app-jagstest-neu-01.azurewebsites.net"
+        },
+        "parBackendHttpSettingsCollectionName":{
+            "value": "appgwbackendcollections"
+        },
+        "parBackendHttpSettingsCollectionCookieBasedAffinity":{
+            "value": "Enabled"
+        },
+        "parBackendHttpSettingsCollectionPortNumber":{
+            "value": 80
+        },
+        "parRequestRoutingRulesName":{
+            "value": "appgwreoutingrules"
+        },
+        "parparRequestRoutingRuleType":{
+            "value": "Basic"
+        },
+        "parSslCertificateName":{
+            "value": "wildcard-jagslab-net"
+        }
+   
+    }
+  }
+
+ 

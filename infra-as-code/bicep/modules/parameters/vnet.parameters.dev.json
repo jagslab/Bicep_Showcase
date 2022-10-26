@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "parLocation":{
+           "value": "uksouth" 
+        },
+        
+        "parVnetName":{
+            "value": "vnet-jagslab-demo-uks-01"
+        },        
+         "parTags": {
+             "value": {
+                 "Environment": "JagsLab",
+                 "Owner": "Jag"
+              }
+         },
+         "parVnetAddressPrefixes":{
+            "value": "10.20.16.0/20"
+         },
+         "parSkuTier":{
+            "value": "Regional"
+         },
+         "parPublicIPAllocationMethod":{
+            "value": "Static"
+         },
+         "parSubnetName0":{
+            "value": "snet-appgw"
+         },
+         "parSubnet0AddressPrefix":{
+            "value": "10.20.16.0/26"
+         },
+         "parSubnet0ServiceEndpoint":{
+            "value": "Microsoft.Web"
+         },
+         "parSubnetName1":{
+            "value": "snet-web"
+         },
+         "parSubnet1AddressPrefix":{
+            "value": "10.20.16.64/26"
+         }
+
+    }
+}

@@ -1,0 +1,24 @@
+variables:
+  - group: kvSecretsDev
+  - group: kvSecretsProd
+
+  - name: location
+    value: uksouth
+
+  - name: azureSubscription
+    value: jagslab-MS_Bicep_Workshop-0e9da35c-07a7-4468-98f4-03fbeb4db963 
+
+  - name: resourceGroupName
+    value: rg-bicep-demo-uks-01
+
+  - name: templateFile
+    value: '././jag_showcase/main.bicep'
+
+  - name: bicepParameterFileDev
+    value: '././jag_showcase/main.parameters.dev.json'
+
+  - name: bicepParameterFileProd
+    value: '././jag_showcase/main.parameters.prod.json'
+
+  - name: tearDownTemplateFile
+    value: '././ResourceGroupCleanup.bicep'

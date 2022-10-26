@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "parLocation":{
+           "value": "uksouth" 
+        },
+        "parStorageAccountName":{
+            "value": "stjagslabshowcase"
+        },
+        "parTags": {
+            "value": {
+                "Environment": "JagsLab",
+                "Owner": "Jag"
+             }
+        },
+        "parSku":{
+            "value": "Standard_LRS"
+        },
+        "parKind":{
+            "value": "StorageV2"
+        },
+        "parIdentity":{
+            "value": "SystemAssigned"
+        },
+        "parAccessTier":{
+            "value": "Cool"
+        },
+        "parAllowBlobPublicAccess":{
+            "value": false
+        },
+        "parAllowCrossTenantReplication":{
+            "value": false
+        },
+        "parAllowedCopyScope":{
+            "value": "PrivateLink"
+        },
+        "parAllowSharedKeyAccess":{
+            "value": false
+        }
+        
+    }
+  }

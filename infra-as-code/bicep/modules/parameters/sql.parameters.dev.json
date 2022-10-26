@@ -1,0 +1,112 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "parLocation":{
+           "value": "uksouth" 
+        },
+        
+        "parSqlServerName":{
+            "value": "sql-jagslab-demo-uks-01"
+        },
+        "parTags": {
+            "value": {
+                "Environment": "JagsLab",
+                "Owner": "Jag"
+             }
+        },
+        "parIdentityType":{
+            "value": "SystemAssigned"
+        },
+        "parSQLVersion":{
+            "value": "12.0"
+        },
+        "parPublicNetworkAccess":{
+            "value": "Enabled"
+        },
+        "parMinimalTlsVersion":{
+            "value": "1.2"
+        },
+        "parAdministratorLogin":{
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/0e9da35c-07a7-4468-98f4-03fbeb4db963/resourceGroups/rg-shared-neu-01/providers/Microsoft.KeyVault/vaults/kv-jagslab-shared-neu-01"
+                },
+                "secretName": "sqlServerAdministratorLogin"
+            }
+        },
+        "parAdministratorPassword":{
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/0e9da35c-07a7-4468-98f4-03fbeb4db963/resourceGroups/rg-shared-neu-01/providers/Microsoft.KeyVault/vaults/kv-jagslab-shared-neu-01"
+                },
+                "secretName": "sqlServerAdministratorPassword"
+            }
+        },
+        "parAdministratorType":{
+            "value": "ActiveDirectory"
+        },
+        "parAzureADOnlyAuthentication":{
+            "value": true
+        },
+        "parAzureADLogin":{
+            "value": "SQL-Admins"
+        },
+        "parAzureADLoginPrincipalType":{
+            "value": "Group"
+        },
+        "parAzureADSid":{
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/0e9da35c-07a7-4468-98f4-03fbeb4db963/resourceGroups/rg-shared-neu-01/providers/Microsoft.KeyVault/vaults/kv-jagslab-shared-neu-01"
+                },
+                "secretName": "AzureADSidSQLAdminGroup"
+            }
+        },
+        "parTenantId":{
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/0e9da35c-07a7-4468-98f4-03fbeb4db963/resourceGroups/rg-shared-neu-01/providers/Microsoft.KeyVault/vaults/kv-jagslab-shared-neu-01"
+                },
+                "secretName": "TenantId"
+            }
+        },
+        "parSqlDbName":{
+            "value": "sqldb-jagslab-demo-uks-01"
+        },
+        "parSqlDbSkuName":{
+            "value": "Basic"
+        },
+        "parSqlDbSkuTier":{
+            "value": "Basic"
+        },
+        "parSqlDbSkuCapacity":{
+            "value": 5
+        },
+        "parSqlDbCollation":{
+            "value": "SQL_Latin1_General_CP1_CI_AS"
+        },
+        "parSqlDbMaxSizeBytes":{
+            "value": 2147483648
+        },
+        "parSqlDbCatalogCollation":{
+            "value": "SQL_Latin1_General_CP1_CI_AS"
+        },
+        "parSqlDbZoneRedundant":{
+            "value": false
+        },
+        "parSqlDbrequestedBackupStorageRedundancy":{
+            "value": "Local"
+        },
+        "parSqlServerFirewallRule":{
+            "value": "AllowAllIps"
+        },
+        "parSqlServerStartIpAddress":{
+            "value": "0.0.0.0"
+        },
+        "parSqlServerEndIpAddress":{
+            "value": "0.0.0.0"
+        }
+   
+    }
+  }
